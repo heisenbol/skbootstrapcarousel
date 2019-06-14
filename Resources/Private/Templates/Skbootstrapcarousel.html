@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace skbootstrapcarousel=Skar\Skbootstrapcarousel\ViewHelpers}
+
+<f:comment>
+	<f:debug title="settings">{settings}</f:debug>
+	<f:debug title="data">{data}</f:debug>
+	<f:debug title="xxxxx">{cropVariantWidthDesktop * initialImageMultiplier}</f:debug>
+
+	<f:variable name="floatPercent" value="0.25" />
+	<f:debug title="settings">{settings}</f:debug>
+	<f:debug title="slides">{slides}</f:debug>
+	<f:debug title="data">{data}</f:debug>
+	<f:debug>{_all}</f:debug>
+</f:comment>
+
+
+
+
+
+<f:if condition="{flexformData.settings.displaymode} == 'carousel'">
+	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/carouselstyles.css')}
+</f:if>
+<f:if condition="{flexformData.settings.displaymode} == 'columns'">
+	<f:comment>{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/columnstyles.css')}</f:comment>
+</f:if>
+<f:if condition="{flexformData.settings.displaymode} == 'lightbox'">
+	<f:comment>{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/lightboxstyles.css')}</f:comment>
+	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.css')}
+	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.min.js', footer:'true')}
+	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Js/lightboxinit.js', footer:'true')}
+</f:if>
+{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/styles.css')}
+
+<f:if condition="{slides}">
+	<div class="skbootstrapcarousel-outer-wrapper indicators{flexformData.settings.showbullets} {flexformData.settings.displaymode}">
+		<div id="skbootstrapcarousel{data.uid}" data-interval="{flexformData.settings.waittime}" class="carousel slide {f:if(condition: '{flexformData.settings.transitionfade}', then: 'carousel-fade')}" {f:if(condition: '{flexformData.settings.autoplay}', then: 'data-ride="carousel"')}>
+
+			<f:if condition="{flexformData.settings.showbullets}">
+				<f:if condition="{flexformData.settings.displaymode} == 'carousel'">
+					<f:render partial="IndicatorsCarousel" arguments="{_all}" /> 
+				</f:if>
+			</f:if>
+			<f:if condition="{flexformData.settings.showbullets}">
+				<f:if condition="{flexformData.settings.displaymode} == 'lightbox'">
+					<f:render partial="IndicatorsLightbox" arguments="{_all}" /> 
+				</f:if>
+			</f:if>
+			<f:if condition="{flexformData.settings.showbullets}">
+				<f:if condition="{flexformData.settings.displaymode} == 'columns'">
+					<f:render partial="IndicatorsColumns" arguments="{_all}" /> 
+				</f:if>
+			</f:if>
+			<f:if condition="{flexformData.settings.displaymode} == 'carousel'">
+				<f:render partial="Carousel" arguments="{_all}" /> 
+			</f:if>
+			<f:if condition="{flexformData.settings.displaymode} == 'lightbox'">
+				<f:render partial="Lightbox" arguments="{_all}" /> 
+			</f:if>
+			<f:if condition="{flexformData.settings.displaymode} == 'columns'">
+				<f:render partial="Columns" arguments="{_all}" /> 
+			</f:if>
+		</div>
+	</div>
+</f:if>
+
+
+</html>

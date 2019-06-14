@@ -1,0 +1,201 @@
+
+ <T3DataStructure>
+
+	 <meta type="array">
+		 <langChildren>0</langChildren>
+		 <langDisable>1</langDisable>
+	 </meta>
+	 <sheets>
+		 <sDEF>
+			 <ROOT>
+                <TCEforms>
+                    <sheetTitle>Texts</sheetTitle>
+                </TCEforms>
+			 	<type>array</type>
+				 <el>
+					<settings.displaymode>
+						<TCEforms>
+							<label>Display Mode</label>
+							<onChange>reload</onChange>
+
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Carousel</numIndex>
+										<numIndex index="1">carousel</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Lightbox (no text)</numIndex>
+										<numIndex index="1">lightbox</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Columns</numIndex>
+										<numIndex index="1">columns</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.displaymode>
+
+					<settings.groupsof>
+						<TCEforms>
+							<label>Lightbox grouping</label>
+							<displayCond><![CDATA[FIELD:settings.displaymode:=:lightbox]]></displayCond>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">8</numIndex>
+										<numIndex index="1">8</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">6</numIndex>
+										<numIndex index="1">6</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">4</numIndex>
+										<numIndex index="1">4</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.groupsof>
+
+					<settings.columns>
+						<TCEforms>
+							<label>Columns</label>
+							<displayCond><![CDATA[FIELD:settings.displaymode:=:columns]]></displayCond>
+
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">6</numIndex>
+										<numIndex index="1">6</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">4</numIndex>
+										<numIndex index="1">4</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">3</numIndex>
+										<numIndex index="1">3</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">2</numIndex>
+										<numIndex index="1">2</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.columns>
+
+					<settings.waittime>
+						<TCEforms>
+							<label>Pause time (ms)</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<eval>int</eval>
+								<range>
+									<lower>500</lower>
+								</range>
+								<default>5000</default>
+							</config>
+						</TCEforms>
+					</settings.waittime>
+					<settings.autoplay>
+						<TCEforms>
+							<label>Auto play</label>
+							<config>
+								<type>check</type>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.autoplay>
+					<settings.nextprev>
+						<TCEforms>
+							<label>Show next / previous</label>
+							<displayCond><![CDATA[FIELD:settings.displaymode:=:carousel]]></displayCond>
+
+							<config>
+								<type>check</type>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.nextprev>
+					<settings.showbullets>
+						<TCEforms>
+							<label>Show indicators</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Do not show</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Within slides</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">Above slides</numIndex>
+										<numIndex index="1">2</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">Below slides</numIndex>
+										<numIndex index="1">3</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.showbullets>
+
+					<settings.transitionfade>
+						<TCEforms>
+							<label>Transition fade</label>
+							<config>
+								<type>check</type>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.transitionfade>
+
+					<settings.width>
+						<TCEforms>
+							<label>Number for Image Width</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<eval>int</eval>
+								<default>1600</default>
+							</config>
+						</TCEforms>
+					</settings.width>
+					<settings.height>
+						<TCEforms>
+							<label>Number for Image Height</label>
+							<config>
+								<type>input</type>
+								<size>6</size>
+								<eval>int</eval>
+								<default>600</default>
+							</config>
+						</TCEforms>
+					</settings.height>
+				 </el>
+			 </ROOT>
+		</sDEF>
+
+	</sheets>
+ </T3DataStructure>
+ 

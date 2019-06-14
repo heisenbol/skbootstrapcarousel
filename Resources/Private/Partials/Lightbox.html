@@ -1,0 +1,39 @@
+<f:comment>to format raw pou exw to xreiazetai alliws ayto pou einai mesa sto viewhelper mou ginetai escape. Alla mhpws xalaei tipota allo?</f:comment>
+<f:alias map="{
+	itemsPerRow:'{flexformData.settings.groupsof / 2}'
+}">
+	<f:alias map="{
+		blockwidth:'{12 / itemsPerRow}'
+	}">
+		<div class="carousel-inner">
+			<f:format.raw>
+				<skbootstrapcarousel:skbootstrapcarouselGroupedarray slides="{slides}" groupsof="{flexformData.settings.groupsof}">
+					<f:for each="{groupedSlides}" as="slideGroup" iteration="iter">
+					    <div class="carousel-item text-center {f:if(condition: '{iter.isFirst}', then: 'active')}">
+					    	<div class="row">
+								<f:for each="{slideGroup}" as="item" iteration="iter">
+						            <figure class="col-md-{blockwidth} d-md-inline-block">
+						            	<f:if condition="{item.backgroundImage}">
+							            	<f:then> 
+								              <a data-toggle="lightbox" data-gallery="skbgallery{data.uid}"  data-title="-" data-footer="{item.data.text1->f:format.html()->f:format.htmlentities()} {f:if(condition: '{item.backgroundImage.0.properties.description}', then: '{item.backgroundImage.0.properties.description}')}" href="{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width}',height:'{flexformData.settings.height}c')}" >
+								                <img alt="" src="{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width / itemsPerRow}',height:'{flexformData.settings.height / itemsPerRow}c')}"  class="img-fluid">
+								              </a>
+							            	</f:then>
+							            	<f:else>
+								                <img alt="" src="{f:uri.image(src:'EXT:skbootstrapcarousel/Resources/Public/Images/blank.png',width:'{flexformData.settings.width / itemsPerRow}',height:'{flexformData.settings.height / itemsPerRow}c')}"  class="img-fluid">
+							            	</f:else>
+							        	</f:if>
+
+						            </figure>
+								</f:for>
+							</div>
+						</div>
+					</f:for>
+				</skbootstrapcarousel:skbootstrapcarouselGroupedarray>
+			</f:format.raw>
+		</div>
+
+
+	</f:alias>
+</f:alias>
+
