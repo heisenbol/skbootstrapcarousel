@@ -1,0 +1,45 @@
+<div class="carousel-inner">
+	<f:for each="{slides}" as="item" iteration="iter">
+	    <div class="carousel-item {f:if(condition: '{iter.isFirst}', then: 'active')}">
+	    	<img class="d-block w-100" 
+	    		decoding="async"
+	    		src="{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width}',height:'{flexformData.settings.height}c')}" 
+	    		srcset="{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width}',height:'{flexformData.settings.height}c')} {flexformData.settings.width}w,
+	    		{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width / 2}',height:'{flexformData.settings.height / 2}c')} {flexformData.settings.width / 2}w,
+	    		{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width / 4}',height:'{flexformData.settings.height / 4}c')} {flexformData.settings.width / 4}w"
+	    		alt="">
+			<f:if condition="{item.data.text1}">
+				<f:alias map="{
+					frameBackgroundColor:\"{skbootstrapcarousel:skbootstrapcarouselHexToRgbColor(hex:'{item.data.framebackgroundcolor}', opacity:'{item.data.frameopacity}')}\"
+				}">
+			  		<div class="carousel-caption d-none d-md-block" style="{f:if(condition: '{item.data.useframe}', then: 'border: 1px solid {item.data.framebordercolor};background-color:{frameBackgroundColor};')} {f:if(condition: '{item.data.usetexthadow}', then: 'text-shadow: 2px 2px 5px {item.data.shadowcolor};')}">
+			    		<f:format.html>{item.data.text1}</f:format.html>
+			  		</div>
+		  		</f:alias>
+			</f:if>
+
+			<f:if condition="{item.backgroundImage.0.properties.description}">
+		  		<div class="carousel-copyrightinfo d-none d-md-block">
+		    		{item.backgroundImage.0.properties.description}
+		  		</div>
+			</f:if>
+
+	    </div>
+	</f:for>
+</div>
+
+<f:if condition="{flexformData.settings.nextprev}">
+	<a class="carousel-control-prev" href="#skbootstrapcarousel{data.uid}" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#skbootstrapcarousel{data.uid}" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</f:if>
+
+
+
+
+

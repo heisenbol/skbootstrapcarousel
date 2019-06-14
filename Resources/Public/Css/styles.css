@@ -1,0 +1,38 @@
+
+.skbootstrapcarousel-outer-wrapper.indicators2 {
+  margin-top:10px; /* space for the indicators */
+}
+
+
+.skbootstrapcarousel-outer-wrapper .carousel-indicators.indicators2 {
+  top:-10px; /* above slider */
+  bottom:inherit;
+}
+
+.skbootstrapcarousel-outer-wrapper .carousel-indicators.indicators2 .active {
+  background-color: rgb(0, 182, 255);
+}
+
+.skbootstrapcarousel-outer-wrapper .carousel-indicators.indicators2 li {
+  background-color: rgba(0, 182, 255, 0.4);
+  cursor:pointer;
+}
+
+
+.skbootstrapcarousel-outer-wrapper.indicators3 {
+  margin-top:10px; /* space for the indicators */
+}
+
+
+.skbootstrapcarousel-outer-wrapper .carousel-indicators.indicators3 {
+  bottom:-10px; /* below slider */
+}
+
+.skbootstrapcarousel-outer-wrapper .carousel-indicators.indicators3 .active {
+  background-color: rgb(0, 182, 255);
+}
+
+.skbootstrapcarousel-outer-wrapper .carousel-indicators.indicators3 li {
+  background-color: rgba(0, 182, 255, 0.4);
+  cursor:pointer;
+}

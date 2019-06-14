@@ -1,0 +1,47 @@
+<f:comment>to format raw pou exw to xreiazetai alliws ayto pou einai mesa sto viewhelper mou ginetai escape. Alla mhpws xalaei tipota allo?</f:comment>
+
+<f:alias map="{
+	blockwidth:'{12 / flexformData.settings.columns}'
+}">
+
+		<div class="carousel-inner">
+			<f:format.raw>
+				<skbootstrapcarousel:skbootstrapcarouselGroupedarray slides="{slides}" groupsof="{flexformData.settings.columns}">
+					<f:for each="{groupedSlides}" as="slideGroup" iteration="iter">
+					    <div class="carousel-item  {f:if(condition: '{iter.isFirst}', then: 'active')}">
+					    	<div class="row">
+								<f:for each="{slideGroup}" as="item" iteration="iter">
+
+						            <figure class="col-md-{blockwidth} d-flex">
+						            	<f:if condition="{item.backgroundImage}">
+							            	<f:then> 
+												<div class="card mb-2 flex-fill">
+													<img alt="" src="{f:uri.image(image:item.backgroundImage.0,width:'{flexformData.settings.width / flexformData.settings.columns}',height:'{flexformData.settings.height / flexformData.settings.columns}c')}"  class="card-img-top" >
+													<div class="card-body">
+														
+														<div class="card-text">{item.data.text1->f:format.html()}</div>
+														
+													</div>
+												</div>
+								              
+							            	</f:then>
+							            	<f:else>
+								                &nbsp;
+							            	</f:else>
+							        	</f:if>
+
+						            </figure>
+
+
+								</f:for>
+							</div>
+						</div>
+					</f:for>
+				</skbootstrapcarousel:skbootstrapcarouselGroupedarray>
+			</f:format.raw>
+		</div>
+
+
+	
+</f:alias>
+

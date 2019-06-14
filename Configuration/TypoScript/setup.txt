@@ -1,0 +1,49 @@
+
+tt_content.skbootstrapcarousel >
+tt_content.skbootstrapcarousel =< lib.contentElement
+tt_content.skbootstrapcarousel = FLUIDTEMPLATE
+tt_content.skbootstrapcarousel {
+    dataProcessing {
+        10 = Skar\Skbootstrapcarousel\DataProcessing\FlexFormProcessor
+        10 {
+          fieldName = pi_flexform
+          as = flexformData
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+            table = tx_skbootstrapcarousel_carousel_item
+            pidInList.field = pid
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+            as = slides
+            orderBy = sorting
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = background_image
+                    as = backgroundImage
+                }
+            }
+        }
+    }
+
+    templateName = Skbootstrapcarousel
+	#file = EXT:skbootstrapcarousel/Resources/Private/Templates/Skbootstrapcarousel.html
+    templateRootPaths {
+      10 = EXT:skbootstrapcarousel/Resources/Private/Templates
+    }
+    partialRootPaths {
+      10 = EXT:skbootstrapcarousel/Resources/Private/Partials
+    }
+	variables {
+        
+
+	}
+}
+
+
+
+

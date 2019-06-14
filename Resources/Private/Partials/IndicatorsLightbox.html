@@ -1,0 +1,9 @@
+<f:format.raw>
+	<ol class="carousel-indicators indicators{flexformData.settings.showbullets}">
+		<skbootstrapcarousel:skbootstrapcarouselGroupedarray slides="{slides}" groupsof="{flexformData.settings.groupsof}">
+			<f:for each="{groupedSlides}" as="slideGroup" iteration="iter">
+					<li data-target="#skbootstrapcarousel{data.uid}" data-slide-to="{iter.index}" class="{f:if(condition: '{iter.isFirst}', then: 'active')}"></li>
+			</f:for>
+		</skbootstrapcarousel:skbootstrapcarouselGroupedarray>
+	</ol>
+</f:format.raw>

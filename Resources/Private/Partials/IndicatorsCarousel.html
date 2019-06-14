@@ -1,0 +1,5 @@
+				<ol class="carousel-indicators indicators{flexformData.settings.showbullets}">
+					<f:for each="{slides}" as="item" iteration="iter">
+						<li data-target="#skbootstrapcarousel{data.uid}" data-slide-to="{iter.index}" class="{f:if(condition: '{iter.isFirst}', then: 'active')}"></li>
+					</f:for>
+				</ol>
