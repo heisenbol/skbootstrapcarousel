@@ -3,7 +3,7 @@ $tca = array(
 	'types' => array(
 		'skbootstrapcarousel' => array(
 			'showitem' => '--palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.general;general,
-			header;Name (not shown in frontend),
+		        --palette--;;skbootstrapcarouselheaderPalette,
 			pi_flexform;General settings,
 		    --div--;Slides,
 				tx_skbootstrapcarousel_carousel_item,
@@ -13,6 +13,15 @@ $tca = array(
 			',
 		)
 	),
+	'palettes' => [
+	    'skbootstrapcarouselheaderPalette' => [
+	        'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.header',
+	        'showitem' => '
+	            header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_formlabel,
+	            header_layout;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout_formlabel,
+	        ',
+	    ],
+	],
 	'columns' => array(
 		'CType' => array(
 			'config' => array(

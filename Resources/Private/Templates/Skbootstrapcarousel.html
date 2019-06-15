@@ -13,8 +13,12 @@
 	<f:debug>{_all}</f:debug>
 </f:comment>
 
-
-
+<f:if condition="{data.header}">
+	<f:if condition="{data.header_layout}!=100">
+		<f:comment> not hidden </f:comment>
+		<h2>{data.header}</h2>
+	</f:if>
+</f:if>
 
 
 <f:if condition="{flexformData.settings.displaymode} == 'carousel'">
