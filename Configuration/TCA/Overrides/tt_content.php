@@ -56,8 +56,8 @@ $GLOBALS['TCA']['tt_content']['columns']['tx_skbootstrapcarousel_carousel_item']
         ]
     ]
 ];
-
-$fields = [
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('*', 'FILE:EXT:skbootstrapcarousel/Configuration/FlexForms/Carouselproperties.xml', 'skbootstrapcarousel');
+/*$fields = [
 	'pi_flexform' => [
 	    'exclude' => false,
 	    'label' => 'Carousel settings',
@@ -68,9 +68,9 @@ $fields = [
 		    ],
 	    ]
 	],
-];
+];*/
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $fields);
+//\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $fields);
 /*
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
