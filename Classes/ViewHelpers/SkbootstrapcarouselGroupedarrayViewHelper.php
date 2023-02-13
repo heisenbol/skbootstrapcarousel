@@ -2,7 +2,7 @@
 namespace Skar\Skbootstrapcarousel\ViewHelpers;
 
 
-class SkbootstrapcarouselGroupedarrayViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SkbootstrapcarouselGroupedarrayViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
     /**
      * Initialize additional argument

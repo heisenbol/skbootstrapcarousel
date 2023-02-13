@@ -2,7 +2,7 @@
 namespace Skar\Skbootstrapcarousel\ViewHelpers;
 
 
-class SkbootstrapcarouselHexToRgbColorViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class SkbootstrapcarouselHexToRgbColorViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper {
 
     /**
      * Initialize additional argument

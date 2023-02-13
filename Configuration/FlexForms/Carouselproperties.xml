@@ -20,6 +20,7 @@
 
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="0" type="array">
 										<numIndex index="0">Carousel</numIndex>
@@ -46,6 +47,7 @@
 							<displayCond><![CDATA[FIELD:settings.displaymode:=:lightbox]]></displayCond>
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="0" type="array">
 										<numIndex index="0">8</numIndex>
@@ -73,6 +75,7 @@
 
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="0" type="array">
 										<numIndex index="0">6</numIndex>
@@ -136,6 +139,7 @@
 							<label>Show indicators</label>
 							<config>
 								<type>select</type>
+								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="0" type="array">
 										<numIndex index="0">Do not show</numIndex>

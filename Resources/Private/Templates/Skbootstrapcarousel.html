@@ -22,18 +22,19 @@
 
 
 <f:if condition="{flexformData.settings.displaymode} == 'carousel'">
-	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/carouselstyles.css')}
+	<f:asset.css identifier="carouselstyles" href="EXT:skbootstrapcarousel/Resources/Public/Css/carouselstyles.css" />
 </f:if>
 <f:if condition="{flexformData.settings.displaymode} == 'columns'">
 	<f:comment>{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/columnstyles.css')}</f:comment>
 </f:if>
 <f:if condition="{flexformData.settings.displaymode} == 'lightbox'">
 	<f:comment>{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/lightboxstyles.css')}</f:comment>
-	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.css')}
-	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.min.js', footer:'true')}
-	{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Js/lightboxinit.js', footer:'true')}
+	<f:asset.css identifier="ekkolightboxcss" href="EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.css" />
+	<f:asset.script identifier="ekkolightboxjs" src="EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.min.js" />
+	<f:asset.script identifier="ekkolightboxinit" src="EXT:skbootstrapcarousel/Resources/Public/Js/lightboxinit.js" />
 </f:if>
-{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/styles.css')}
+<f:asset.css identifier="skbootstrapcarouselstyles" href="EXT:skbootstrapcarousel/Resources/Public/Css/styles.css" />
+
 
 <f:if condition="{slides}">
 	<div class="skbootstrapcarousel-outer-wrapper indicators{flexformData.settings.showbullets} {flexformData.settings.displaymode}">

@@ -21,18 +21,18 @@ return [
         ]
     ],
     'interface' => [
-        'showRecordFieldList' => '
-            hidden,
-            tt_content,
-            text1,
-            shadowcolor,
-            usetexthadow,
-            background_image,
-            useframe,
-            framebordercolor,
-            framebackgroundcolor,
-            frameopacity
-        ',
+        // 'showRecordFieldList' => '
+        //     hidden,
+        //     tt_content,
+        //     text1,
+        //     shadowcolor,
+        //     usetexthadow,
+        //     background_image,
+        //     useframe,
+        //     framebordercolor,
+        //     framebackgroundcolor,
+        //     frameopacity
+        // ',
     ],
     'types' => [
         '1' => [

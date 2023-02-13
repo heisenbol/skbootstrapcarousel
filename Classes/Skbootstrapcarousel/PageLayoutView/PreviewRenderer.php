@@ -32,7 +32,7 @@ class PreviewRenderer implements PageLayoutViewDrawItemHookInterface
    {
       if ($row['CType'] === 'skbootstrapcarousel') {
         $drawItem = false;
-        $flexformService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Service\FlexFormService::class);
+        $flexformService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Service\FlexFormService::class);
         $settings = $flexformService->convertFlexFormContentToArray($row['pi_flexform'])['settings']??NULL;
 
         if (!$settings) {
