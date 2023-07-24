@@ -1,5 +1,4 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
-{namespace skbootstrapcarousel=Skar\Skbootstrapcarousel\ViewHelpers}
 
 <f:comment>
 	<f:debug title="settings">{settings}</f:debug>
@@ -25,10 +24,9 @@
 	<f:asset.css identifier="carouselstyles" href="EXT:skbootstrapcarousel/Resources/Public/Css/carouselstyles.css" />
 </f:if>
 <f:if condition="{flexformData.settings.displaymode} == 'columns'">
-	<f:comment>{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/columnstyles.css')}</f:comment>
+	<f:asset.css identifier="columnstyles" href="EXT:skbootstrapcarousel/Resources/Public/Css/columnstyles.css" />
 </f:if>
 <f:if condition="{flexformData.settings.displaymode} == 'lightbox'">
-	<f:comment>{skbootstrapcarousel:includeFile(path: 'EXT:skbootstrapcarousel/Resources/Public/Css/lightboxstyles.css')}</f:comment>
 	<f:asset.css identifier="ekkolightboxcss" href="EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.css" />
 	<f:asset.script identifier="ekkolightboxjs" src="EXT:skbootstrapcarousel/Resources/Public/Libs/ekko-lightbox-5.4-rc2/ekko-lightbox.min.js" />
 	<f:asset.script identifier="ekkolightboxinit" src="EXT:skbootstrapcarousel/Resources/Public/Js/lightboxinit.js" />
