@@ -155,6 +155,7 @@ return [
             'label' => 'Framed text',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
                 'items' => [
                     '1' => [
                         '0' => 'Yes'
@@ -187,6 +188,7 @@ return [
             'label' => 'Use text shadow',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
                 'items' => [
                     '1' => [
                         '0' => 'Yes'
