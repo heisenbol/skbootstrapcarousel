@@ -104,7 +104,7 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.hidden',
+            'label' => 'hidden',
             'config' => [
                 'type' => 'check',
                 'items' => [
@@ -116,7 +116,7 @@ return [
         ],
         'starttime' => [
             'exclude' => true,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.starttime',
+            'label' => 'start time',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -128,7 +128,7 @@ return [
         ],
         'endtime' => [
             'exclude' => true,
-            'label' => 'LLL:' . $generalLanguageFile . ':LGL.endtime',
+            'label' => 'end time',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
