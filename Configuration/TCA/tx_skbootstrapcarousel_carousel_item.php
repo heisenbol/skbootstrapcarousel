@@ -6,7 +6,6 @@ return [
         'sortby' => 'sorting',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'title' => 'SK Carousel Slide',
         'delete' => 'deleted',
         'versioningWS' => true,
@@ -108,8 +107,9 @@ return [
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0'
+                    [
+                        'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:hidden.I.0',
+                        'value' => '0',
                     ]
                 ]
             ]
@@ -118,9 +118,7 @@ return [
             'exclude' => true,
             'label' => 'start time',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
+                'type' => 'datetime',
                 'default' => 0
             ],
             'l10n_mode' => 'exclude',
@@ -130,9 +128,7 @@ return [
             'exclude' => true,
             'label' => 'end time',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
+                'type' => 'datetime',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038)
@@ -157,8 +153,9 @@ return [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'Yes'
+                    [
+                        'label' => 'Yes',
+                        'value' => '0',
                     ]
                 ]
             ]
@@ -167,8 +164,7 @@ return [
             'exclude' => true,
             'label' => 'Frame border color',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'colorpicker',
+                'type' => 'color',
                 'default' => '#cacaca',
             ],
             'l10n_mode' => 'exclude',
@@ -177,8 +173,7 @@ return [
             'exclude' => true,
             'label' => 'Frame background color',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'colorpicker',
+                'type' => 'color',
                 'default' => '#ffffff',
             ],
             'l10n_mode' => 'exclude',
@@ -190,8 +185,9 @@ return [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'Yes'
+                    [
+                        'label' => 'Yes',
+                        'value' => '0',
                     ]
                 ]
             ]
@@ -200,9 +196,9 @@ return [
         'frameopacity' => [
             'label' => 'Background opacity (0-100)',
             'config' => [
-                'type' => 'input',
+                'type' => 'number',
                 'size' => 10,
-                'eval' => 'trim,int',
+                'eval' => 'trim',
                 'default' => 70,
             ],
         ],
@@ -210,45 +206,73 @@ return [
             'exclude' => true,
             'label' => 'Shadow color',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'colorpicker',
+                'type' => 'color',
                 'default' => '#000000',
             ],
             'l10n_mode' => 'exclude',
         ],
+        // 'background_image' => [
+        //     'exclude' => true,
+        //     'label' => 'Background image',
+        //     'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        //         'background_image',
+        //         [
+        //             //'appearance' => [
+        //                 //'createNewRelationLinkTitle' => 'fdfdfdfsdfdfd' // koumpi "create new relation" otan pas na theseis thn eikona
+        //             //],
+        //             'overrideChildTca' => [
+        //                 'types' => [
+        //                     \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+        //                         'showitem' => '
+        //                             --palette--;;filePalette,
+        //                             description,--linebreak--,crop
+                                    
+        //                         '
+        //                     ]
+        //                 ],
+        //                 'columns' => [
+        //                     'description' => [
+        //                         'exclude' => true,
+        //                         'label' => 'Copyright info',
+        //                     ],
+        //                 ]
+        //             ],
+        //             'minitems' => 1,
+        //             'maxitems' => 1
+        //         ],
+        //         $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+        //     ),
+        //     'l10n_mode' => 'exclude',
+        // ]
         'background_image' => [
-            'exclude' => true,
             'label' => 'Background image',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'background_image',
-                [
-                    //'appearance' => [
-                        //'createNewRelationLinkTitle' => 'fdfdfdfsdfdfd' // koumpi "create new relation" otan pas na theseis thn eikona
-                    //],
-                    'overrideChildTca' => [
-                        'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
+            'config' => [
+                'type' => 'file',
+                'minitems' => 1,
+                'maxitems' => 1,
+                'allowed' => 'common-image-types',
+                'overrideChildTca' => [
+                    'types' => [
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                            'showitem' => '
                                     --palette--;;filePalette,
-                                    description,--linebreak--,crop
+                                    link,description,--linebreak--,crop
                                     
                                 '
-                            ]
-                        ],
-                        'columns' => [
-                            'description' => [
-                                'exclude' => true,
-                                'label' => 'Copyright info',
-                            ],
                         ]
                     ],
-                    'minitems' => 1,
-                    'maxitems' => 1
+                    'columns' => [
+                        'description' => [
+                            'exclude' => true,
+                            'label' => 'Copyright info',
+                        ],
+                    ]
                 ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+            ],
             'l10n_mode' => 'exclude',
-        ]/*,
+
+        ],
+        /*,
         'background_image_options' => [
             'exclude' => true,
             'label' => 'ssssssssss',
