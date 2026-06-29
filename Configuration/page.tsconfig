@@ -1,0 +1,15 @@
+mod {
+    wizards.newContentElement.wizardItems.special {
+        elements {
+            skbootstrapcarousel {
+                iconIdentifier = skbootstrapcarousel-icon
+                title = SK Bootstrap image and content carousel
+                description = Versatile image and content carousel for Bootstrap 4
+                tt_content_defValues {
+                    CType = skbootstrapcarousel
+                }
+            }
+        }
+        show = *
+    }
+}
